@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   border: 2px black solid;
+  font-family: "Orbitron", sans-serif;
 }
 
 .App {
@@ -53,8 +56,45 @@ nav {
   height: 100%;
   object-fit: cover;
   overflow: hidden;
+  filter: brightness(50%);
 }
 
 .search__title {
+  font-size: 48px;
+  font-weight: 100;
   color: white;
+  padding: 24px;
+}
+
+.nav__search-bar{
+  border: 3px white solid;
+  padding: 10px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.search__input{
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-weight: 500;
+  font-size: 24px
+
+}
+.search__input::placeholder{
+  color: white;
+  font-weight: 500;
+  font-size: 24px
+}
+
+.search__input:focus{
+  outline: none;
+}
+.search__icon{
+  width: 40px;
+  height: 40px;
+  color: white;
+  font-weight: 200;
 }
