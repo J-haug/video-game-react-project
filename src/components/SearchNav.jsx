@@ -1,4 +1,3 @@
-import React from "react";
 import image from "../assets/cosmic-environment-with-millions-colorful-bright-lights.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
@@ -10,7 +9,7 @@ function SearchNav() {
         <figure className="nav__background--img--wrapper">
           <img src={image} alt="" className="nav__background--img" />
         </figure>
-        <div className="row">
+        <div className="nav__row">
           <h1 className="search__title">Browse our +10,000 games</h1>
           <div className="nav__search-bar">
             <FontAwesomeIcon className="search__icon" icon={faMagnifyingGlass} />
