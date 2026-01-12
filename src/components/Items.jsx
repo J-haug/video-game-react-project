@@ -1,32 +1,32 @@
 import { useEffect, useState } from "react";
-import Game from "./Game";
+import Item from "./Item";
 
-function Games() {
-    const [games, setGames] = useState([])
+function Items() {
+    const [items, setItems] = useState([])
 
     useEffect(() => {
-        const fetchGames = async () => {
+        const fetchItems = async () => {
             try {
-                const res = await fetch('')
+                const res = await fetch('https://dummyjson.com/products/category/smartphones')
                 if (!res.ok) throw new Error(res.statusText)
                 const data = await res.json()
-                setGames(data.data)
+                setItems(data.products)
             } catch (err) {
                 console.error(err)
             }
         }
         
-        fetchGames()
+        fetchItems()
     }, [])
     
-    console.log(games)
+    console.log(items)
     return(
         <div className="container">
             <div className="row">
                 {
-                    games ? (
-                        games.map(game => (
-                            <Game game={game} />
+                    items ? (
+                        items.map(item => (
+                            <Item item={item} />
                         ))
                     ) : (null)
                 }
@@ -35,4 +35,4 @@ function Games() {
     )
 }
 
-export default Games;
+export default Items;

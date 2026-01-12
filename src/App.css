@@ -120,9 +120,9 @@ nav {
   padding: 0 6px;
 }
 
-/* games */
+/* items */
 
-.game{
+.item{
   width: 25%;
   max-height: 300px;
   padding: 15px;
@@ -132,12 +132,12 @@ nav {
   justify-content: baseline;
 }
 
-.game__img--wrapper{
+.item__img--wrapper{
   height: 100%;
   overflow: hidden;
 }
 
-.game__img{
+.item__img{
   width: 100%;
   height: 100%;
 
