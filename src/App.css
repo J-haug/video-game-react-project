@@ -132,7 +132,16 @@ nav {
   flex-direction: column;
   justify-content: baseline;
   border-bottom: 2px solid white;
+  cursor: pointer;
+  transition: all 300ms ease;
 }
+
+
+.item:hover{
+  transform: translateY(-8px);
+  
+}
+
 
 .item__img--wrapper{
   height: 70%;
