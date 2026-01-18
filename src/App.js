@@ -12,33 +12,15 @@ import ItemPage from './pages/ItemPage';
 
 
 function App() {
-  const [items, setItems] = useState([])
-
-    useEffect(() => {
-        const fetchItems = async () => {
-            try {
-                const res = await fetch('https://api.spaceflightnewsapi.net/v4/articles/?format=json&limit=32')
-                if (!res.ok) throw new Error(res.statusText)
-                const data = await res.json()
-                console.log(data)
-                setItems(data.results)
-            } catch (err) {
-                console.error(err)
-            }
-        }
-        
-        fetchItems()
-    }, [])
-    
-    console.log(items)
+ 
 
   return (
     <Router>
       <div className="App">
         <Routes>
           <Route path='/' />
-          <Route path="/search" element={<Search items={items} />} />
-          <Route path='/article/:id' element={<ItemPage items={items} />} />
+          <Route path="/search" element={<Search />} />
+          <Route path='/article/:id' element={<ItemPage />} />
         </Routes>
         
       </div>
