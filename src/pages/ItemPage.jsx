@@ -3,8 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import Nav from "../components/Nav";
 import Item from "../components/Item";
 
-function ItemPage({ items }) {
-  const { id } = useParams();
+function ItemPage({ items, id }) {
   const item = items.find((item) => +item.id === +id);
 
   return (
