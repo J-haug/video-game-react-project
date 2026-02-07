@@ -1,10 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Nav from "../components/Nav";
 import Item from "../components/Item";
 
-function ItemPage({ items, id }) {
-  const item = items.find((item) => +item.id === +id);
+function ItemPage({ id }) {
+  
+  const [item, setItem] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+    
+  
+    useEffect(() => {
+      const fetchItems = async () => {
+        setIsLoading(true);
+        try {
+          const res = await fetch(
+            `https://api.spaceflightnewsapi.net/v4/articles/${id}`
+          );
+          if (!res.ok) throw new Error(res.statusText);
+          const data = await res.json();
+          
+          setItem(data.results);
+        } catch (err) {
+          console.error(err);
+        } finally {
+          setIsLoading(false);
+        }
+      };
+  
+      fetchItems();
+    }, []);
+  
 
   return (
     <>

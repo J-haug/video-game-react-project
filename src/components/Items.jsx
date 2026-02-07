@@ -4,6 +4,7 @@ import Item from "./Item";
 function Items() {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  
 
   useEffect(() => {
     const fetchItems = async () => {

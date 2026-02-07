@@ -19,7 +19,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Search />} />
-          <Route path='/article/:id' element={<ItemPage />} />
+          <Route path='/article/:id' element={<ItemPage  />} />
         </Routes>
         
       </div>
