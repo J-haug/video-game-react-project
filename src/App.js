@@ -18,8 +18,7 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path='/' />
-          <Route path="/search" element={<Search />} />
+          <Route path="/" element={<Search />} />
           <Route path='/article/:id' element={<ItemPage />} />
         </Routes>
         
