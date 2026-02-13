@@ -3,7 +3,6 @@ import Item from "./Item";
 import image from "../assets/cosmic-environment-with-millions-colorful-bright-lights.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { getValue } from "@testing-library/user-event/dist/utils";
 
 function Items() {
   const [items, setItems] = useState([]);

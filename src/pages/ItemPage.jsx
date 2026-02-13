@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Nav from "../components/Nav";
-import Item from "../components/Item";
 import Footer from "../components/Footer";
 
 function ItemPage() {
