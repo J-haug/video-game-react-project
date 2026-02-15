@@ -8,8 +8,12 @@ function Items() {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [sortValue, setSortValue] = useState('')
+  const [filteredItems, setFilteredItems] = useState([])
+
 
   useEffect(() => {
+    
     const fetchItems = async () => {
       setIsLoading(true);
       try {
@@ -19,6 +23,8 @@ function Items() {
         if (!res.ok) throw new Error(res.statusText);
         const data = await res.json();
         setItems(data.results);
+        setFilteredItems(data.results)
+        console.log(data.results)
       } catch (err) {
         console.error(err);
       } finally {
@@ -29,10 +35,28 @@ function Items() {
     fetchItems();
   }, []);
 
+  const filter = (event) => {
+    
+    setSearchTerm(event.target.value)
+    setFilteredItems(items.filter((item) =>
+      item.title.toLowerCase().includes(searchTerm.toLowerCase())
+    ))
+  }
+
+
+  const sort = (event) => {
+    setSortValue(event.target.value)
+    console.log(event.target.value)
+    if (sortValue === "date-oldest") {
+      setFilteredItems(items.sort((a, b) => new Date(b.published_at) - new Date(a.published_at)))
+
+    }
+    else{
+      setFilteredItems(items.sort((b, a) => new Date(b.published_at) - new Date(a.published_at)))
+
+    }
+  }
   
-  const filteredItems = items.filter((item) =>
-    item.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
 
   return (
     <>
@@ -52,13 +76,21 @@ function Items() {
                 type="text"
                 placeholder="Search"
                 className="search__input"
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={filter}
               />
             </div>
           </div>
         </div>
       </nav>
       <div className="container">
+        <div className="sort__row">
+          <select className="sort__box" name="sort" id="sort"  defaultValue="date-newest" onChange={sort} >
+            <option value="date-newest">Newest Published</option>
+            <option value="date-oldest">Oldest Published</option>
+
+          </select>
+
+        </div>
         <div className="row">
           {isLoading ? (
             <>

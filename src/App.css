@@ -211,6 +211,22 @@ nav {
 }
 
 /* item page  */
+.sort__row{
+  width: 80%;
+  display: flex;
+  justify-content: right;
+  padding: 8px;
+}
+
+
+.sort__box{
+  background-color: black;
+  padding: 4px;
+  font-weight: 500;
+  font-size: 16px;
+  margin-right: 16px;
+  
+}
 
 .item__page {
   display: flex;
