@@ -54,6 +54,7 @@ function ItemPage() {
                <div className="item__description--wrapper">
                  <h1 className="item__page--title">{item.title}</h1>
                  <p className="item__page--description">{item.summary}</p>
+                 <p className="item__date">{item.published_at}</p>
                  <a href={item.url} target="blank" className="item__page--link">
                    Link to article
                  </a>

@@ -282,6 +282,11 @@ nav {
   margin: 0 auto;
 }
 
+.item__date{
+  margin-bottom: 12px ;
+  font-weight: 500;
+}
+
 .item-page__img--placeholder{
   width: 80%;
   margin: 0 auto;
@@ -339,5 +344,34 @@ footer{
     font-size: 16px;
 
   }
+  .item__page{
+    width: 100%;
+  }
+  .row{
+    width: 100%;
+  }
+  .item__page__img--wrapper{
+    max-width: 100%;
+    height: auto;
+  }
   
+  .item__page--img{
+    width: 100%;
+    height: auto;
+  }
+
+  .item__page--title{
+    font-size: 24px;
+    width: 100%;
+  }
+  .item__description--wrapper{
+    max-width: 100vw;
+  }
+
+  .nav{
+    width: 100vw;
+  }
+  .nav__container{
+    width: 100%;
+  }
 }
